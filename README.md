@@ -6,7 +6,10 @@ delivering Hans Christian Andersen's fairy tales.
 _"Life itself is the most wonderful fairy tale of all."_
 — Hans Christian Andersen
 
-[![Tests](https://github.com/andlo/ovos-skill-andersen-tales/actions/workflows/test.yml/badge.svg)](https://github.com/andlo/ovos-skill-andersen-tales/actions/workflows/test.yml)
+It is part of [Emkay](https://github.com/emkay-voice/emkay), OpenVoiceOS in
+the browser, and works on any [OpenVoiceOS](https://openvoiceos.org).
+
+[![Build](https://github.com/emkay-voice/ovos-skill-andersen-tales/actions/workflows/publish.yml/badge.svg)](https://github.com/emkay-voice/ovos-skill-andersen-tales/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/ovos-skill-andersen-tales.svg)](https://pypi.org/project/ovos-skill-andersen-tales/)
 
 > **This skill has no standalone voice interface.** It registers no

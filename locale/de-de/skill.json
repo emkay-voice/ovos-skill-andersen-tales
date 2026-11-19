@@ -1,10 +1,10 @@
 {
-  "skill_id": "ovos-skill-andersen-tales.andlo",
-  "source": "https://github.com/andlo/ovos-skill-andersen-tales",
+  "skill_id": "ovos-skill-andersen-tales.emkay-voice",
+  "source": "https://github.com/emkay-voice/ovos-skill-andersen-tales",
   "package_name": "ovos-skill-andersen-tales",
   "pip_spec": "ovos-skill-andersen-tales",
-  "license": "GPL-3.0-or-later",
-  "author": "andlo",
+  "license": "Apache-2.0",
+  "author": "emkay-voice",
   "name": "Andersens Märchen (Anbieter)",
   "description": "Märchen von Hans Christian Andersen, Anbieter für ovos-common-reading-pipeline-plugin. Keine eigenständige Sprachschnittstelle.",
   "examples": [
@@ -18,5 +18,5 @@
     "andersen",
     "provider"
   ],
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-andersen-tales/main/story-512.png"
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-andersen-tales/main/story-512.png"
 }
