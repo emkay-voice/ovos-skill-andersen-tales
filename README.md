@@ -23,17 +23,46 @@ the browser, and works on any [OpenVoiceOS](https://openvoiceos.org).
 pip install ovos-skill-andersen-tales ovos-common-reading-pipeline-plugin
 ```
 
-## Languages
+## Where the stories come from
 
-Sourced live from [andersenstories.com](https://www.andersenstories.com/),
-which offers exactly 7 languages: EN, DA, DE, ES, FR, IT, NL.
+This provider publishes nothing itself: it finds the stories where they
+are already published, and every story says where it came from. The
+`source` of each search answer is the site the text is read from, and
+the pipeline says it after the last sentence ("And that's the end. It
+came from Wikisource.").
+
+- **[andersenstories.com](https://www.andersenstories.com/)** – on a
+  device (any OpenVoiceOS), as it always was: 7 languages, EN, DA, DE,
+  ES, FR, IT, NL.
+- **[Wikisource](https://wikisource.org)** – the free library of
+  public-domain texts. A browser may not read andersenstories.com (the
+  site doesn't allow other web pages to read it), but it may read
+  Wikisource, so in a browser – [Emkay](https://github.com/emkay-voice/emkay) –
+  the stories come from Wikisource. On a device Wikisource is the
+  fallback when the site can't be reached.
+
+| Language | Wikisource edition | Stories |
+|---|---|---|
+| Danish | Andersen's own Danish text ([Forfatter:Hans Christian Andersen](https://da.wikisource.org/wiki/Forfatter:Hans_Christian_Andersen), "Eventyr og historier") | about 80 |
+| English | [Hans Andersen's Fairy Tales](https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales) | about 95 |
+| French | [Contes d’Andersen](https://fr.wikisource.org/wiki/Contes_d%E2%80%99Andersen), [Nouveaux Contes d’Andersen](https://fr.wikisource.org/wiki/Nouveaux_Contes_d%E2%80%99Andersen), [Contes danois](https://fr.wikisource.org/wiki/Contes_danois_(Andersen)) | about 55 |
+| Italian | [Quaranta novelle](https://it.wikisource.org/wiki/Quaranta_novelle) | about 40 |
+
+German, Spanish and Dutch have no Andersen collection on Wikisource yet
+that can be read aloud as it is, so a browser has no Andersen in those
+languages. A story added to one of the
+pages above is found the next time the index is built (once a week).
+The texts on Wikisource are in the public domain; see each page for its
+edition and translator.
+
+## Languages
 
 **This provider does not translate.** It loads only for the languages
 the installation is configured for - the device's own `lang` plus
-`secondary_langs` in `mycroft.conf` - that it supports. If none of them
-is one of the 7, it **never loads at all**: `initialize()` builds no
-index, registers no bus events, and logs a clear message rather than
-silently serving English (or any other) content.
+`secondary_langs` in `mycroft.conf` - that it has stories in (above). If
+none of them is one of those, it **never loads at all**: `initialize()`
+builds no index, registers no bus events, and logs a clear message
+rather than silently serving English (or any other) content.
 
 For each configured, supported language it builds its own story index,
 and each search is answered from the index of the language it was made
@@ -63,7 +92,7 @@ via OVOS's own resource file resolution rather than Python constants -
 see [ovos-common-reading-pipeline-plugin#26](https://github.com/andlo/ovos-common-reading-pipeline-plugin/issues/26)
 for the full reasoning. This also means every supported language has
 its own `locale/<lang>/skill.json`, so the Skills Store can see this
-provider genuinely supports 7 languages, not just English.
+provider genuinely supports several languages, not just English.
 
 ## Collection hints
 
@@ -80,11 +109,13 @@ response from this provider.
 
 ## Credits
 
-Content sourced from andersenstories.com. Scraping/caching logic ported
+Stories from [andersenstories.com](https://www.andersenstories.com/) and
+[Wikisource](https://wikisource.org) and its volunteers, who transcribe
+and proofread the public-domain editions. Scraping/caching logic ported
 from [ovos-skill-fairytales](https://github.com/andlo/ovos-skill-fairytales).
 
 ## Category
 **Entertainment**
 
 ## Tags
-#stories #fairytales #andersen #provider
+#stories #fairytales #andersen #provider #wikisource
