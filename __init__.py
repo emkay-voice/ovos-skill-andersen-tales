@@ -3,7 +3,7 @@ skill OVOS Andersen Tales
 
 Provider skill for ovos-skill-common-reading: implements the
 ovos.common_reading.* bus protocol and registers NO intents of its own.
-See https://github.com/andlo/ovos-skill-common-reading for the full
+See https://github.com/andlo/ovos-common-reading-pipeline-plugin for the full
 protocol, and why this skill has no standalone voice interface - it is
 not meant to be used without the orchestrator installed.
 """
